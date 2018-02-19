@@ -19,8 +19,7 @@ class CreateFileUploadFilesTable extends Migration
             $table->string('format');
             $table->string('mime_type');
             $table->bigInteger('bytes');
-            $table->string('url');
-            $table->string('secure_url');
+            $table->string('path');
             $table->string('disk');
             $table->timestamps();
         });
