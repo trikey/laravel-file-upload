@@ -1,0 +1,18 @@
+{
+    "name": "trikey/laravel-file-upload",
+    "description": "File upload backend",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ivan Belitskii",
+            "email": "belitskii@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "Trikey\\FileUpload\\": "src/"
+        }
+    }
+}
