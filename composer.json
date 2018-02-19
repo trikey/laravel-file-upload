@@ -14,5 +14,12 @@
         "psr-4": {
             "Trikey\\FileUpload\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Trikey\\FileUpload\\FileUploadServiceProvider"
+            ]
+        }
     }
 }

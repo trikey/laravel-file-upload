@@ -22,4 +22,8 @@ class FilesController
         }
         return response()->json($data);
     }
+    
+    public function download($publicId) {
+        
+    }
 }
