@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'disk' => env('FILE_UPLOAD_DISK', 'pgsql'),
-    'path' => env('FILE_UPLOAD_PATH', 'uploads'),
+    'disk' => env('FILE_UPLOADER_DISK', 'local'),
+    'path' => env('FILE_UPLOADER_PATH', 'uploads'),
 ];

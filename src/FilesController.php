@@ -1,6 +1,6 @@
 <?php
 
-namespace Trikey\FileUpload;
+namespace Trikey\FileUploader;
 
 class FilesController
 {
@@ -21,14 +21,14 @@ class FilesController
 
     protected function uploadFile($file) {
 
-        $disk = config('file-upload.disk');
-        $path = config('file-upload.path');
+        $disk = config('file-uploader.disk');
+        $path = config('file-uploader.path');
         $extension = $file->getClientOriginalExtension();
 
         $filePath = $this->write($file, $path, $disk);
 
         $publicId = str_random(16);
-        while ($entry = \DB::table('file_upload_files')->where('public_id', $publicId)->first()) {
+        while ($entry = \DB::table('file_uploader_files')->where('public_id', $publicId)->first()) {
             $publicId = str_random(16);
         }
 
@@ -42,7 +42,7 @@ class FilesController
             'created_at' => \Carbon\Carbon::now()
         ];
 
-        if (\DB::table('file_upload_files')->insert($fileData)) {
+        if (\DB::table('file_uploader_files')->insert($fileData)) {
             unset($fileData['path']);
             $fileData['url'] = env('APP_URL') . "/files/{$publicId}";
             $fileData['secure_url'] = str_replace('http://', 'https://', $fileData['url']);
@@ -54,7 +54,7 @@ class FilesController
 
     public function download($publicId) {
 
-        $entry = \DB::table('file_upload_files')
+        $entry = \DB::table('file_uploader_files')
             ->select('path', 'disk', 'mime_type', 'bytes')
             ->where('public_id', '=', $publicId)
             ->first();

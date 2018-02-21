@@ -1,5 +1,5 @@
 {
-    "name": "trikey/laravel-file-upload",
+    "name": "trikey/laravel-file-uploader",
     "description": "File upload backend",
     "type": "library",
     "authors": [
@@ -12,13 +12,13 @@
         "classmap": [
         ],
         "psr-4": {
-            "Trikey\\FileUpload\\": "src/"
+            "Trikey\\FileUploader\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Trikey\\FileUpload\\FileUploadServiceProvider"
+                "Trikey\\FileUploader\\FileUploaderServiceProvider"
             ]
         }
     }
