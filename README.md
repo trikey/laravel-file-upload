@@ -10,7 +10,7 @@ Those who are on older versions of laravel , add this to `providers` in `config/
 
     \Trikey\FileUploader\FileUploaderServiceProvider::class,
 
-This package also adds tabke to keep files in, so run:
+This package also adds table to keep files in, so run:
 
     php artisan migrate
 
