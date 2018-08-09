@@ -95,7 +95,7 @@ class FilesController
         ];
 
         if (\DB::table('file_uploader_files')->insert($fileData)) {
-            $fileData['url'] = env('APP_URL') . "/files/{$publicId}";
+            $fileData['url'] = "/files/{$publicId}";
             $fileData['secure_url'] = str_replace('http://', 'https://', $fileData['url']);
             return collect($fileData);
         }
